@@ -8,6 +8,39 @@
 .header {
   position: relative;
   border: 5px solid rgb(192, 5, 5);
-  border-radius: 10%;
+  border-radius: 15%;
   text-align: left;
+}
+
+.articleInfo {
+  position: relative;
+  border: 5px solid rgb(192, 5, 5);
+  border-radius: 10%;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.author {
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  left: 40px;
+}
+
+.dateMade {
+  position: absolute;
+  text-align: right;
+  top: 5px;
+  right: 40px;
+}
+
+.votes {
+  position: absolute;
+  text-align: right;
+  bottom: 5px;
+  right: 40px;
+}
+
+.title {
+  padding: 20px;
 }
