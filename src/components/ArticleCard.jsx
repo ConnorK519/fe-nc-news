@@ -12,7 +12,7 @@ export const ArticleCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getArticle(key).then(({ data: { article } }) => {
+    getArticle(key).then((article) => {
       setNewArticle(article);
       setLoading(false);
     });

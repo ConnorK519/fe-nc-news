@@ -7,7 +7,7 @@ export const ArticleList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getArticleInfo().then(({ data: { articles } }) => {
+    getArticleInfo().then((articles) => {
       setArticles(articles);
       setLoading(false);
     });
