@@ -4,15 +4,20 @@ import axios from "axios";
 
 export const ArticleList = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("https://newnews-eiss.onrender.com/api/articles")
       .then(({ data: { articles } }) => {
-        console.log(articles);
         setArticles(articles);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return <>Loading...</>;
+  }
 
   return (
     <>
