@@ -1,6 +1,8 @@
+import { ArticleList } from "./components/ArticleList";
+import { ArticleCard } from "./components/ArticleCard";
+import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-import { ArticleList } from "./components/ArticleList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +12,10 @@ function App() {
       <div className="header">
         <h1>NC-News</h1>
       </div>
-      <ArticleList />
+      <Routes>
+        <Route path="/" element={<ArticleList />} />
+        <Route path="/articles/:key" element={<ArticleCard />} />
+      </Routes>
     </>
   );
 }

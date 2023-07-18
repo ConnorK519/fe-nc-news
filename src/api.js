@@ -5,5 +5,9 @@ const newsApi = axios.create({
 });
 
 export const getArticleInfo = () => {
-  return newsApi.get("/articles")
+  return newsApi.get("/articles");
+};
+
+export const getArticle = (key) => {
+  return newsApi.get(`/articles/${key}`);
 };
