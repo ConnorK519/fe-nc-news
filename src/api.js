@@ -11,3 +11,7 @@ export const getArticleInfo = () => {
 export const getArticle = (key) => {
   return newsApi.get(`/articles/${key}`);
 };
+
+export const getArticleComments = (key) => {
+  return newsApi.get(`/articles/${key}/comments`);
+};
