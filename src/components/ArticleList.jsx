@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 import { ArticleInfo } from "./ArticleInfo";
-import axios from "axios";
+import { getArticleInfo } from "../api";
 
 export const ArticleList = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://newnews-eiss.onrender.com/api/articles")
-      .then(({ data: { articles } }) => {
-        setArticles(articles);
-        setLoading(false);
-      });
+    getArticleInfo().then(({ data: { articles } }) => {
+      setArticles(articles);
+      setLoading(false);
+    });
   }, []);
 
   if (loading) {
