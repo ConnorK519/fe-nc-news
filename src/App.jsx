@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <div className="header">
-        <h1>NC-News</h1>
+        <a href="/">
+          <h1>NC-News</h1>
+        </a>
       </div>
       <Routes>
         <Route path="/" element={<ArticleList />} />
