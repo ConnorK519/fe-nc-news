@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
+import { CommentsList } from "./CommentList";
 import dayjs from "dayjs";
 import "../App.css";
 
@@ -11,7 +12,7 @@ export const ArticleCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getArticle(key).then(({ data: { article } }) => {
+    getArticle(key).then((article) => {
       setNewArticle(article);
       setLoading(false);
     });
@@ -32,6 +33,9 @@ export const ArticleCard = () => {
         <p>{newArticle.body}</p>
         <img src={newArticle.article_img_url} />
         <button className="votes">Vote: {newArticle.votes}</button>
+      </section>
+      <section>
+        <CommentsList keyId={key} />
       </section>
     </>
   );
