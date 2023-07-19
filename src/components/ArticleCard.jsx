@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
 import { CommentsList } from "./CommentList";
+import { patchArticle } from "../api";
 import dayjs from "dayjs";
 import "../App.css";
 
@@ -10,6 +11,7 @@ export const ArticleCard = () => {
 
   const [newArticle, setNewArticle] = useState({});
   const [loading, setLoading] = useState(true);
+  const [userVote, setUserVote] = useState(0);
 
   useEffect(() => {
     getArticle(key).then((article) => {
@@ -17,6 +19,14 @@ export const ArticleCard = () => {
       setLoading(false);
     });
   }, []);
+
+  const handleClick = () => {
+    patchArticle(key).then((updatedArticle) => {
+      setUserVote((current) => {
+        return current + 1;
+      });
+    });
+  };
 
   if (loading) {
     return <>Loading...</>;
@@ -32,7 +42,10 @@ export const ArticleCard = () => {
         <p className="dateMade">Written: {written}</p>
         <p>{newArticle.body}</p>
         <img src={newArticle.article_img_url} />
-        <button className="votes">Vote: {newArticle.votes}</button>
+        <button className="votes" onClick={handleClick} disabled={userVote > 0}>
+          Votes:
+          {newArticle.votes + userVote}
+        </button>
       </section>
       <section>
         <CommentsList keyId={key} />
