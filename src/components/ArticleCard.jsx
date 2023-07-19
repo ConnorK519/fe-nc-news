@@ -23,7 +23,11 @@ export const ArticleCard = () => {
   const handleClick = () => {
     patchArticle(key).then((updatedArticle) => {
       setUserVote((current) => {
-        return current + 1;
+        if (current === 0) {
+          return current + 1;
+        } else {
+          return current - 1;
+        }
       });
     });
   };
