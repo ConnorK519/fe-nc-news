@@ -24,9 +24,9 @@ export const getArticleComments = (key) => {
     });
 };
 
-export const patchArticle = (key) => {
+export const patchArticle = (key, vote) => {
   return newsApi
-    .patch(`/articles/${key}`, { votes: 1 })
+    .patch(`/articles/${key}`, { votes: vote })
     .then(({ data: { article } }) => {
       return article;
     });

@@ -16,18 +16,15 @@ export const ArticleCard = () => {
   useEffect(() => {
     getArticle(key).then((article) => {
       setNewArticle(article);
+      setUserVote(article.votes);
       setLoading(false);
     });
   }, []);
 
-  const handleClick = () => {
-    patchArticle(key).then((updatedArticle) => {
+  const handleClick = (vote) => {
+    patchArticle(key, vote).then((updatedArticle) => {
       setUserVote((current) => {
-        if (current === 0) {
-          return current + 1;
-        } else {
-          return current - 1;
-        }
+        return current + vote;
       });
     });
   };
@@ -46,10 +43,15 @@ export const ArticleCard = () => {
         <p className="dateMade">Written: {written}</p>
         <p>{newArticle.body}</p>
         <img src={newArticle.article_img_url} />
-        <button className="votes" onClick={handleClick} disabled={userVote > 0}>
-          Votes:
-          {newArticle.votes + userVote}
-        </button>
+        <section className="votesBox">
+          <button onClick={() => handleClick(1)} disabled={userVote > 0}>
+            👍
+          </button>
+          <h3 className="voteSpacing">{userVote}</h3>
+          <button onClick={() => handleClick(-1)} disabled={userVote < 0}>
+            👎
+          </button>
+        </section>
       </section>
       <section>
         <CommentsList keyId={key} />

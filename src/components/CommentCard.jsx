@@ -9,7 +9,7 @@ export const CommentCard = ({ comment }) => {
         <h2>{comment.author}</h2>
         <p className="dateMade">{written}</p>
         <p className="textSpacing">{comment.body}</p>
-        <button className="votes">Vote: {comment.votes}</button>
+        <h3 className="votes">Vote: {comment.votes}</h3>
       </section>
     </>
   );
