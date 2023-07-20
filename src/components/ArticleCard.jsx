@@ -44,11 +44,17 @@ export const ArticleCard = () => {
         <p>{newArticle.body}</p>
         <img src={newArticle.article_img_url} />
         <section className="votesBox">
-          <button onClick={() => handleClick(1)} disabled={userVote > 0}>
+          <button
+            onClick={() => handleClick(1)}
+            disabled={userVote > newArticle.votes}
+          >
             👍
           </button>
           <h3 className="voteSpacing">{userVote}</h3>
-          <button onClick={() => handleClick(-1)} disabled={userVote < 0}>
+          <button
+            onClick={() => handleClick(-1)}
+            disabled={userVote < newArticle.votes}
+          >
             👎
           </button>
         </section>
