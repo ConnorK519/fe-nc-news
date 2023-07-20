@@ -13,7 +13,7 @@ export const ArticleInfo = ({ article }) => {
         <h3>Topic: {article.topic}</h3>
         <p className="author"> Author: {article.author}</p>
         <p className="dateMade">Written: {written}</p>
-        <img src={article.article_img_url} />
+        <img className="img" src={article.article_img_url} />
         <p className="votes">Votes: {article.votes}</p>
       </section>
     </>
