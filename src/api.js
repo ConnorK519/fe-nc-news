@@ -26,12 +26,12 @@ export const getArticleComments = (key) => {
 
 export const postComment = (key, text) => {
   const newComment = {
-    author: "TestUser",
-    body: "Hello World",
+    author: "jessjelly",
+    body: text,
   };
   return newsApi
-    .post(`/api/articles/${key}/comments`)
-    .then(({ data: { comment } }) => {
-      return comment;
+    .post(`/articles/${key}/comments`, newComment)
+    .then(({ data: createdComment }) => {
+      return createdComment;
     });
 };
