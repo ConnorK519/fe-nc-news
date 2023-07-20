@@ -23,3 +23,15 @@ export const getArticleComments = (key) => {
       return comments;
     });
 };
+
+export const postComment = (key, text) => {
+  const newComment = {
+    author: "TestUser",
+    body: "Hello World",
+  };
+  return newsApi
+    .post(`/api/articles/${key}/comments`)
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+};
