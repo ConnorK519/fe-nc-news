@@ -47,7 +47,7 @@ export const ArticleCard = () => {
           <button onClick={() => handleClick(1)} disabled={userVote > 0}>
             👍
           </button>
-          <h3 className="voteSpacing">{newArticle.votes + userVote}</h3>
+          <h3 className="voteSpacing">{userVote}</h3>
           <button onClick={() => handleClick(-1)} disabled={userVote < 0}>
             👎
           </button>
