@@ -4,27 +4,32 @@ import "../App.css";
 
 export const CreateComment = ({ keyId, setComments }) => {
   const [newComment, setNewComment] = useState("");
-  const [commentError, setCommentError] = useState("");
+  const [commentMessage, setCommentMessage] = useState("");
+  const [isBeingPosted, setIsBeingPosted] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsBeingPosted(true);
+    setCommentMessage("Comment is being posted...");
     postComment(keyId, newComment)
       .then(({ createdComment }) => {
         setComments((currentComments) => {
           setNewComment("");
-          setCommentError("");
+          setCommentMessage("");
+          setIsBeingPosted(false);
           return [createdComment, ...currentComments];
         });
       })
       .catch((err) => {
-        setCommentError("Failed to post comment");
+        setIsBeingPosted(false);
+        setCommentMessage("Failed to post comment");
       });
   };
 
   return (
     <>
       <form className="commentInputBox">
-        {commentError && <h4>{commentError}</h4>}
+        {commentMessage && <h4>{commentMessage}</h4>}
         <label>
           Post a comment here:
           <textarea
@@ -36,7 +41,10 @@ export const CreateComment = ({ keyId, setComments }) => {
             }}
           ></textarea>
         </label>
-        <button onClick={handleSubmit} disabled={newComment.length === 0}>
+        <button
+          onClick={handleSubmit}
+          disabled={newComment.length === 0 && !isBeingPosted ? true : false}
+        >
           Post
         </button>
       </form>
