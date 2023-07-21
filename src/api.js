@@ -24,6 +24,18 @@ export const getArticleComments = (key) => {
     });
 };
 
+export const postComment = (key, text) => {
+  const newComment = {
+    author: "jessjelly",
+    body: text,
+  };
+  return newsApi
+    .post(`/articles/${key}/comments`, newComment)
+    .then(({ data: createdComment }) => {
+      return createdComment;
+    });
+};
+
 export const patchArticle = (article_id, vote) => {
   return newsApi
     .patch(`/articles/${article_id}`, { votes: vote })
