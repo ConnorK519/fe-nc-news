@@ -58,7 +58,7 @@ export const ArticleCard = () => {
           <button
             onClick={() => handleClick(1)}
             disabled={userVote > 0}
-            className={userVote > 0 && voteConfirm}
+            className={userVote > 0 ? voteConfirm : ""}
           >
             👍
           </button>
@@ -66,7 +66,7 @@ export const ArticleCard = () => {
           <button
             onClick={() => handleClick(-1)}
             disabled={userVote < 0}
-            className={userVote < 0 && voteConfirm}
+            className={userVote < 0 ? voteConfirm : ""}
           >
             👎
           </button>
