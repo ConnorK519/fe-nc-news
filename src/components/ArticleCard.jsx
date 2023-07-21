@@ -13,11 +13,14 @@ export const ArticleCard = () => {
   const [loading, setLoading] = useState(true);
   const [userVote, setUserVote] = useState(0);
   const [voteError, setVoteError] = useState("");
+  const [voteConfirm, setVoteConfirm] = useState("");
+  const [originalVotes, setOriginalVotes] = useState(0);
 
   useEffect(() => {
     getArticle(key).then((article) => {
       setNewArticle(article);
       setLoading(false);
+      setOriginalVotes(article.votes);
     });
   }, []);
 
@@ -28,6 +31,7 @@ export const ArticleCard = () => {
     patchArticle(key, vote)
       .then((updatedArticle) => {
         setVoteError("");
+        setVoteConfirm("confirm");
       })
       .catch((err) => {
         setVoteError("An Error Occurred During your request");
@@ -51,11 +55,19 @@ export const ArticleCard = () => {
         <img className="img" src={newArticle.article_img_url} />
         <div className="votesBox">
           {voteError && <h4>{voteError}</h4>}
-          <button onClick={() => handleClick(1)} disabled={userVote > 0}>
+          <button
+            onClick={() => handleClick(1)}
+            disabled={userVote > 0}
+            className={userVote > 0 && voteConfirm}
+          >
             👍
           </button>
-          <h3 className="voteSpacing">{newArticle.votes + userVote}</h3>
-          <button onClick={() => handleClick(-1)} disabled={userVote < 0}>
+          <h3 className="voteSpacing">{originalVotes + userVote}</h3>
+          <button
+            onClick={() => handleClick(-1)}
+            disabled={userVote < 0}
+            className={userVote < 0 && voteConfirm}
+          >
             👎
           </button>
         </div>
