@@ -23,3 +23,11 @@ export const getArticleComments = (key) => {
       return comments;
     });
 };
+
+export const patchArticle = (article_id, vote) => {
+  return newsApi
+    .patch(`/articles/${article_id}`, { votes: vote })
+    .then(({ data: { article } }) => {
+      return article;
+    });
+};
