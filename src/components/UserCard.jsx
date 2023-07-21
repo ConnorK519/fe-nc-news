@@ -5,13 +5,16 @@ import { UserContext } from "../contexts/UserContext";
 export const UserCard = ({ user }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
-  const handleClick = () => {
-    setCurrentUser(user.username);
-  };
+  console.log(currentUser);
 
   return (
     <>
-      <div onClick={handleClick} className="userCard">
+      <div
+        onClick={() => {
+          setCurrentUser(user.username);
+        }}
+        className="userCard"
+      >
         <img className="avatarSize" src={user.avatar_url} />
         <h3>{user.username}</h3>
       </div>
