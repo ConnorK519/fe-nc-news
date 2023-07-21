@@ -1,6 +1,6 @@
 import "../App.css";
 import { useContext } from "react";
-import { UserContext } from "../contexts/Users";
+import { UserContext } from "../contexts/UserContext";
 
 export const UserCard = ({ user }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext);

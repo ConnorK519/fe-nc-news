@@ -1,17 +1,19 @@
 import { postComment } from "../api";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../App.css";
+import { UserContext } from "../contexts/UserContext";
 
 export const CreateComment = ({ keyId, setComments }) => {
   const [newComment, setNewComment] = useState("");
   const [commentMessage, setCommentMessage] = useState("");
   const [isBeingPosted, setIsBeingPosted] = useState(false);
+  const { currentUser } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsBeingPosted(true);
     setCommentMessage("Comment is being posted...");
-    postComment(keyId, newComment)
+    postComment(keyId, newComment, currentUser)
       .then(({ createdComment }) => {
         setComments((currentComments) => {
           setNewComment("");

@@ -3,7 +3,7 @@ import { getUsers } from "../api";
 import { UserCard } from "./UserCard";
 import "../App.css";
 import { useContext } from "react";
-import { UserContext } from "../contexts/Users";
+import { UserContext } from "../contexts/UserContext";
 
 export const UsersPage = () => {
   const [users, setUsers] = useState([]);
