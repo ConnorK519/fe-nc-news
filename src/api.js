@@ -43,3 +43,9 @@ export const patchArticle = (article_id, vote) => {
       return article;
     });
 };
+
+export const getUsers = () => {
+  return newsApi.get("/users").then(({ data: users }) => {
+    return users;
+  });
+};
