@@ -110,3 +110,10 @@
   padding: 1rem;
   display: flex;
 }
+
+.deleteButton {
+  position: absolute;
+  text-align: right;
+  bottom: 5px;
+  left: 40px;
+}
