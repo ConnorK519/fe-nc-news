@@ -24,9 +24,9 @@ export const getArticleComments = (key) => {
     });
 };
 
-export const postComment = (key, text) => {
+export const postComment = (key, text, user) => {
   const newComment = {
-    author: "jessjelly",
+    author: user || "grumpy19",
     body: text,
   };
   return newsApi
@@ -42,4 +42,16 @@ export const patchArticle = (article_id, vote) => {
     .then(({ data: { article } }) => {
       return article;
     });
+};
+
+export const getUsers = () => {
+  return newsApi.get("/users").then(({ data: users }) => {
+    return users;
+  });
+};
+
+export const deleteComment = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`).then(({ status }) => {
+    return status;
+  });
 };
