@@ -26,7 +26,7 @@ export const getArticleComments = (key) => {
 
 export const postComment = (key, text, user) => {
   const newComment = {
-    author: user,
+    author: user || "grumpy19",
     body: text,
   };
   return newsApi
