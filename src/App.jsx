@@ -6,19 +6,15 @@ import "./App.css";
 import { UsersPage } from "./components/UsersPage";
 import { NavBar } from "./components/NavBar";
 import { UserContext } from "./contexts/UserContext";
+import { Header } from "./components/Header";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState("tickle122");
+  const [currentUser, setCurrentUser] = useState("");
 
   return (
     <>
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-        <div className="header">
-          <a href="/">
-            <h1>NC-News</h1>
-          </a>
-          <h3>Logged in as: {currentUser}</h3>
-        </div>
+        <Header />
         <NavBar />
         <Routes>
           <Route path="/" element={<ArticleList />} />
