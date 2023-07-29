@@ -52,7 +52,11 @@ export const ArticleCard = () => {
         <p className="author">Author: {newArticle.author}</p>
         <p className="dateMade">Written: {written}</p>
         <p>{newArticle.body}</p>
-        <img className="img" src={newArticle.article_img_url} />
+        <img
+          alt={newArticle.topic}
+          className="img"
+          src={newArticle.article_img_url}
+        />
         <div className="votesBox">
           {voteError && <h4>{voteError}</h4>}
           <button

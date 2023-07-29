@@ -3,10 +3,10 @@ import "../App.css";
 
 export const NavBar = () => {
   return (
-    <div className="userCard">
+    <nav className="userCard">
       <Link to="/users">
         <button>Users</button>
       </Link>
-    </div>
+    </nav>
   );
 };
