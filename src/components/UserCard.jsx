@@ -12,7 +12,7 @@ export const UserCard = ({ user }) => {
       }}
       className="userCard"
     >
-      <img className="avatarSize" src={user.avatar_url} />
+      <img alt={user.username} className="avatarSize" src={user.avatar_url} />
       <h3>{user.username}</h3>
     </div>
   );
