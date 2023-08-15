@@ -10,6 +10,7 @@
   border: 5px solid rgb(192, 5, 5);
   border-radius: 15px;
   text-align: center;
+  min-width: 1000px;
 }
 
 .articleInfo {
@@ -116,4 +117,31 @@
   text-align: right;
   bottom: 5px;
   left: 40px;
+}
+
+nav {
+  border: 5px solid rgb(192, 5, 5);
+  border-radius: 15px;
+  display: flex;
+  margin-top: 1rem;
+}
+
+nav button {
+  background: linear-gradient(
+    180deg,
+    rgb(224, 6, 6) 20%,
+    rgb(255, 221, 213) 50%,
+    rgb(194, 9, 9) 90%
+  );
+  border-radius: 5px;
+}
+
+nav select {
+  background: linear-gradient(
+    180deg,
+    rgb(224, 6, 6) 20%,
+    rgb(255, 221, 213) 50%,
+    rgb(194, 9, 9) 90%
+  );
+  border-radius: 5px;
 }

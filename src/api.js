@@ -4,8 +4,9 @@ const newsApi = axios.create({
   baseURL: "https://newnews-eiss.onrender.com/api",
 });
 
-export const getArticleInfo = () => {
-  return newsApi.get("/articles").then(({ data: { articles } }) => {
+export const getArticleInfo = (sort_by, order) => {
+  const params = { sort_by, order };
+  return newsApi.get("/articles", { params }).then(({ data: { articles } }) => {
     return articles;
   });
 };
@@ -53,5 +54,11 @@ export const getUsers = () => {
 export const deleteComment = (comment_id) => {
   return newsApi.delete(`/comments/${comment_id}`).then(({ status }) => {
     return status;
+  });
+};
+
+export const getTopics = () => {
+  return newsApi.get(`/topics`).then(({ data: { topics } }) => {
+    return topics;
   });
 };
