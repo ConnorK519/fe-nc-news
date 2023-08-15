@@ -12,7 +12,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState("");
   const [sort_by, setSortBy] = useState(null);
   const [order, setOrder] = useState(null);
-  console.log(sort_by)
+
   return (
     <>
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -23,7 +23,12 @@ function App() {
             path="/"
             element={<ArticleList sort_by={sort_by} order={order} />}
           />
+          <Route
+            path="/articles/topics/:topic"
+            element={<ArticleList sort_by={sort_by} order={order} />}
+          />
           <Route path="/articles/:key" element={<ArticleCard />} />
+
           <Route path="/users" element={<UsersPage />} />
         </Routes>
       </UserContext.Provider>
