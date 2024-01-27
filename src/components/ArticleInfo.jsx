@@ -14,11 +14,12 @@ export const ArticleInfo = ({ article }) => {
         <p className="author"> Author: {article.author}</p>
         <p className="dateMade">Written: {written}</p>
         <img
-          className="img"
+          className="infoImg"
           src={article.article_img_url}
           alt={article.topic}
         />
         <p className="votes">Votes: {article.votes}</p>
+        <p className="commentCount">Comments: {article.comment_count}</p>
       </section>
     </>
   );

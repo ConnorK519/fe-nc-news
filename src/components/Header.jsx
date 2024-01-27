@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   return (
-    <header className="header">
-      <Link to="/">
+    <Link to="/">
+      <header className="header">
         <h1>NC-News</h1>
-      </Link>
-      {currentUser && <h3>Logged in as: {currentUser}</h3>}
-    </header>
+        {currentUser && <h3>Logged in as: {currentUser}</h3>}
+      </header>
+    </Link>
   );
 };

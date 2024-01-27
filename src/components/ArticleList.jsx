@@ -21,9 +21,11 @@ export const ArticleList = ({ sort_by, order }) => {
 
   return (
     <>
-      {articles.map((article) => {
-        return <ArticleInfo key={article.article_id} article={article} />;
-      })}
+      <div className="container">
+        {articles.map((article) => {
+          return <ArticleInfo key={article.article_id} article={article} />;
+        })}
+      </div>
     </>
   );
 };

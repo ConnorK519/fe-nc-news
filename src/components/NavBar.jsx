@@ -14,7 +14,7 @@ export const NavBar = ({ setSortBy, setOrder }) => {
     });
   }, []);
 
-  const validSorts = ["Author", "ID", "Date", "Votes"];
+  const validSorts = ["Author", "Comments", "Date", "Votes"];
 
   function handleSelectTopic(topic) {
     if (topic === "all") {
