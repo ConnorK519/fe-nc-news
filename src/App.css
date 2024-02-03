@@ -74,6 +74,13 @@ nav select {
   margin: 1rem;
   padding: 1rem;
   width: 80%;
+  display: flex;
+}
+
+.infoContainer {
+  position: relative;
+  text-align: center;
+  width: 80%;
 }
 
 .infoImg {

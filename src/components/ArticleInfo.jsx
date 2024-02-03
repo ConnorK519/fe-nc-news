@@ -7,19 +7,22 @@ export const ArticleInfo = ({ article }) => {
   return (
     <>
       <section className="articleInfo">
-        <Link className="link" to={`/articles/${article.article_id}`}>
-          <h2 className="title">{article.title}</h2>
-        </Link>
-        <h3>Topic: {article.topic}</h3>
-        <p className="author"> Author: {article.author}</p>
-        <p className="dateMade">Written: {written}</p>
         <img
           className="infoImg"
           src={article.article_img_url}
           alt={article.topic}
         />
-        <p className="votes">Votes: {article.votes}</p>
-        <p className="commentCount">Comments: {article.comment_count}</p>
+        <div className="infoContainer">
+          <Link className="link" to={`/articles/${article.article_id}`}>
+            <h2 className="title">{article.title}</h2>
+          </Link>
+          <h3>Topic: {article.topic}</h3>
+          <p className="author"> Author: {article.author}</p>
+          <p className="dateMade">Written: {written}</p>
+
+          <p className="votes">Votes: {article.votes}</p>
+          <p className="commentCount">Comments: {article.comment_count}</p>
+        </div>
       </section>
     </>
   );
