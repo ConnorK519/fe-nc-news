@@ -17,12 +17,12 @@ export const ArticleInfo = ({ article }) => {
             <h2 className="title">{article.title}</h2>
           </Link>
           <h3 className="topic">Topic: {article.topic}</h3>
-          <p className="author"> Author: {article.author}</p>
-          <p className="dateMade">Written: {written}</p>
-
-          <p className="votes">Votes: {article.votes}</p>
-          <p className="commentCount">Comments: {article.comment_count}</p>
         </div>
+        <p className="author"> Author: {article.author}</p>
+        <p className="dateMade">Written: {written}</p>
+
+        <p className="votes">Votes: {article.votes}</p>
+        <p className="commentCount">Comments: {article.comment_count}</p>
       </section>
     </>
   );

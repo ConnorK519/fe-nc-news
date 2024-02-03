@@ -85,8 +85,9 @@ nav select {
 }
 
 .infoImg {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
   max-width: 20vw;
   height: auto;
 }
