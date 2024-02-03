@@ -74,7 +74,6 @@ nav select {
   margin: 1rem;
   padding: 1rem;
   width: 80%;
-  height: 25%;
   display: flex;
 }
 
@@ -93,9 +92,9 @@ nav select {
 
 .author {
   position: absolute;
-  text-align: left;
   top: 5px;
   left: 40px;
+  font-size: 80%;
 }
 
 .dateMade {
