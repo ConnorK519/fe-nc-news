@@ -16,7 +16,7 @@ export const ArticleInfo = ({ article }) => {
           <Link className="link" to={`/articles/${article.article_id}`}>
             <h2 className="title">{article.title}</h2>
           </Link>
-          <h3>Topic: {article.topic}</h3>
+          <h3 className="topic">Topic: {article.topic}</h3>
           <p className="author"> Author: {article.author}</p>
           <p className="dateMade">Written: {written}</p>
 

@@ -95,32 +95,38 @@ nav select {
   position: absolute;
   top: 5px;
   left: 40px;
-  font-size: 80%;
+  font-size: 1.5vw;
 }
 
 .dateMade {
   position: absolute;
   top: 5px;
   right: 40px;
-  font-size: 80%;
+  font-size: 1.5vw;
 }
 
 .votes {
   position: absolute;
   bottom: 5px;
   right: 40px;
-  font-size: 80%;
+  font-size: 1.5vw;
 }
 
 .commentCount {
   position: absolute;
   bottom: 5px;
   left: 40px;
-  font-size: 80%;
+  font-size: 1.5vw;
 }
 
 .title {
+  margin-top: 10%;
   padding: 20px;
+  font-size: 1.5vw;
+}
+
+.topic {
+  font-size: 1.5vw;
 }
 
 .voteSpacing {
