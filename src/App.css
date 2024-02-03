@@ -74,6 +74,7 @@ nav select {
   margin: 1rem;
   padding: 1rem;
   width: 80%;
+  height: 25%;
   display: flex;
 }
 
@@ -99,25 +100,23 @@ nav select {
 
 .dateMade {
   position: absolute;
-  text-align: right;
   top: 5px;
   right: 40px;
+  font-size: 80%;
 }
 
 .votes {
   position: absolute;
-  text-align: right;
   bottom: 5px;
   right: 40px;
-  margin: 5px;
+  font-size: 80%;
 }
 
 .commentCount {
   position: absolute;
-  text-align: right;
   bottom: 5px;
   left: 40px;
-  margin: 5px;
+  font-size: 80%;
 }
 
 .title {
