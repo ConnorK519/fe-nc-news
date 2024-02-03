@@ -74,6 +74,7 @@ nav select {
   margin: 1rem;
   padding: 1rem;
   width: 80%;
+  height: 25%;
   display: flex;
 }
 
