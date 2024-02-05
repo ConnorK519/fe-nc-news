@@ -49,10 +49,10 @@ export const ArticleCard = () => {
     <>
       <div className="container">
         <section className="articleCard">
-          <h2 className="title">{newArticle.title}</h2>
+          <h2 className="cardTitle">{newArticle.title}</h2>
           <p className="author">Author: {newArticle.author}</p>
           <p className="dateMade">Written: {written}</p>
-          <p>{newArticle.body}</p>
+          <p className="cardText">{newArticle.body}</p>
           <img
             alt={newArticle.topic}
             className="cardImg"

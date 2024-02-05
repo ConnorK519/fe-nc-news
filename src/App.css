@@ -117,8 +117,8 @@ nav select {
   font-size: 1.5vw;
 }
 
-.title {
-  margin-top: 12vh;
+.infoTitle {
+  margin-top: 12%;
   padding: 20px;
   font-size: 1.5vw;
   text-align: center;
@@ -144,6 +144,15 @@ nav select {
   width: 80%;
   display: flex;
   flex-direction: column;
+  font-size: 1.5vw;
+}
+
+.cardTitle {
+  margin-top: 5%;
+  padding: 20px;
+  font-size: 1.5vw;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 .cardImg {
@@ -151,6 +160,10 @@ nav select {
   max-width: 50vw;
   height: auto;
   margin: 5%;
+}
+
+.cardText {
+  margin: 3%;
 }
 
 /* Comment styles */
