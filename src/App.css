@@ -92,35 +92,36 @@ nav select {
 .author {
   position: absolute;
   top: 5px;
-  left: 40px;
+  left: 30px;
   font-size: 1.5vw;
 }
 
 .dateMade {
   position: absolute;
   top: 5px;
-  right: 40px;
+  right: 30px;
   font-size: 1.5vw;
 }
 
 .votes {
   position: absolute;
   bottom: 5px;
-  right: 40px;
+  right: 30px;
   font-size: 1.5vw;
 }
 
 .commentCount {
   position: absolute;
   bottom: 5px;
-  left: 40px;
+  left: 30px;
   font-size: 1.5vw;
 }
 
 .title {
-  margin-top: 10%;
+  margin-top: 12vh;
   padding: 20px;
   font-size: 1.5vw;
+  text-align: center;
 }
 
 .topic {
@@ -141,6 +142,15 @@ nav select {
   margin: 1rem;
   padding: 1rem;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImg {
+  align-self: center;
+  max-width: 50vw;
+  height: auto;
+  margin: 5%;
 }
 
 /* Comment styles */
@@ -151,6 +161,7 @@ nav select {
   border-radius: 15px;
   margin: 1rem;
   padding: 1rem;
+  width: 80%;
 }
 
 .commentInput {
@@ -159,6 +170,7 @@ nav select {
 }
 
 .commentInputBox {
+  position: relative;
   border: 5px solid rgb(192, 5, 5);
   border-radius: 15px;
   margin: 1rem;
@@ -189,11 +201,6 @@ nav select {
 }
 
 /* global styles */
-
-.img {
-  padding-top: 1rem;
-  padding-bottom: 5rem;
-}
 
 .textSpacing {
   margin: 3rem;

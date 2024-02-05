@@ -55,7 +55,7 @@ export const ArticleCard = () => {
           <p>{newArticle.body}</p>
           <img
             alt={newArticle.topic}
-            className="img"
+            className="cardImg"
             src={newArticle.article_img_url}
           />
           <div className="votesBox">
