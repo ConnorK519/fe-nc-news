@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { getTopics } from "../api";
 
@@ -24,12 +24,13 @@ export const NavBar = ({ setSortBy, setOrder }) => {
     }
   }
 
+  function goToUsers() {
+    nav("/users");
+  }
+
   return (
     <nav>
-      <Link to="/users">
-        <button>Users</button>
-      </Link>
-
+      <button onClick={goToUsers}>Users</button>
       <select
         onChange={(e) => {
           handleSelectTopic(e.target.value);
