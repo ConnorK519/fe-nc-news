@@ -118,10 +118,10 @@ nav select {
 }
 
 .infoTitle {
-  margin-top: 12%;
   padding: 20px;
   font-size: 1.5vw;
   text-align: center;
+  margin-top: 8%;
 }
 
 .topic {
