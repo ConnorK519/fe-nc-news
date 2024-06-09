@@ -28,22 +28,24 @@ export const CommentCard = ({ comment }) => {
 
   return (
     <>
-      <section className="commentCard">
-        {isError && <h2>{commentMsg}</h2>}
-        {!isVisible && <h2>{commentMsg}</h2>}
-        {isVisible ? (
-          <>
-            <h2>{comment.author}</h2>
-            <p className="dateMade">{written}</p>
-            <p className="textSpacing">{comment.body}</p>
-            <h3 className="votes">Vote: {comment.votes}</h3>
-            {currentUser === comment.author && (
-              <button onClick={handleDelete} className="deleteButton">
-                Delete Comment
-              </button>
-            )}
-          </>
-        ) : null}
+      <section className="info border">
+        <div className="commentCard">
+          {isError && <h2>{commentMsg}</h2>}
+          {!isVisible && <h2>{commentMsg}</h2>}
+          {isVisible ? (
+            <>
+              <h2>{comment.author}</h2>
+              <p className="dateMade">{written}</p>
+              <p className="textSpacing">{comment.body}</p>
+              <p className="votes">Vote: {comment.votes}</p>
+              {currentUser === comment.author && (
+                <button onClick={handleDelete} className="deleteButton">
+                  Delete Comment
+                </button>
+              )}
+            </>
+          ) : null}
+        </div>
       </section>
     </>
   );

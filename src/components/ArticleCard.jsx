@@ -48,7 +48,7 @@ export const ArticleCard = () => {
   return (
     <>
       <div className="container">
-        <section className="articleCard">
+        <section className="articleCard border">
           <h2 className="cardTitle">{newArticle.title}</h2>
           <p className="author">Author: {newArticle.author}</p>
           <p className="dateMade">Written: {written}</p>
