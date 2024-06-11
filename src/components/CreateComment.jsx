@@ -30,26 +30,28 @@ export const CreateComment = ({ keyId, setComments }) => {
 
   return (
     <>
-      <form className="commentInputBox">
-        {commentMessage && <h4>{commentMessage}</h4>}
-        <label>
-          Post a comment here:
-          <textarea
-            placeholder="Enter your comment here..."
-            className="commentInput"
-            value={newComment}
-            onChange={(event) => {
-              setNewComment(event.target.value);
-            }}
-          ></textarea>
-        </label>
-        <button
-          onClick={handleSubmit}
-          disabled={newComment.length === 0 && !isBeingPosted ? true : false}
-        >
-          Post
-        </button>
-      </form>
+      <section className="info border">
+        <form className="commentInputBox">
+          {commentMessage && <h4>{commentMessage}</h4>}
+          <label>
+            Post a comment here:
+            <textarea
+              placeholder="Enter your comment here..."
+              className="commentInput"
+              value={newComment}
+              onChange={(event) => {
+                setNewComment(event.target.value);
+              }}
+            ></textarea>
+          </label>
+          <button
+            onClick={handleSubmit}
+            disabled={newComment.length === 0 && !isBeingPosted ? true : false}
+          >
+            Post
+          </button>
+        </form>
+      </section>
     </>
   );
 };
