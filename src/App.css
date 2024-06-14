@@ -58,6 +58,22 @@ body {
   width: auto;
 }
 
+.votesBox {
+  display: flex;
+  position: absolute;
+  bottom: 1%;
+  right: 5%;
+  align-items: center;
+}
+
+.voteSpacing {
+  margin: 5%;
+}
+
+.confirm {
+  background-color: rgb(35, 196, 35);
+}
+
 .commentCount {
   position: absolute;
   bottom: 1%;
@@ -190,6 +206,7 @@ nav section {
 
 .cardImg {
   margin: 0.5rem;
+  margin-bottom: 5%;
   max-width: 45%;
   height: auto;
 }

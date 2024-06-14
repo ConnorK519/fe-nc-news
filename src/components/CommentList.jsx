@@ -18,7 +18,7 @@ export const CommentsList = ({ keyId }) => {
 
   return (
     <>
-      <section>
+      <section className="container">
         <CreateComment keyId={keyId} setComments={setComments} />
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment} />;
