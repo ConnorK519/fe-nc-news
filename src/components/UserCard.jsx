@@ -6,14 +6,16 @@ export const UserCard = ({ user }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   return (
-    <div
-      onClick={() => {
-        setCurrentUser(user.username);
-      }}
-      className="userCard"
-    >
-      <img alt={user.username} className="avatarSize" src={user.avatar_url} />
-      <h3>{user.username}</h3>
+    <div className="container">
+      <div
+        onClick={() => {
+          setCurrentUser(user.username);
+        }}
+        className="userCard border"
+      >
+        <img alt={user.username} className="avatarSize" src={user.avatar_url} />
+        <h3>{user.username}</h3>
+      </div>
     </div>
   );
 };
