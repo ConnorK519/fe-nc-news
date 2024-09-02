@@ -14,7 +14,7 @@ export const NavBar = ({ setSortBy, setOrder }) => {
     });
   }, []);
 
-  const validSorts = ["Author", "Comments", "Date", "Votes"];
+  const validSorts = ["author", "comment_count", "created_at", "votes"];
 
   function handleSelectTopic(topic) {
     if (topic === "all") {
@@ -29,39 +29,40 @@ export const NavBar = ({ setSortBy, setOrder }) => {
   }
 
   return (
-    <nav>
-      <button onClick={goToUsers}>Users</button>
-      <select
-        onChange={(e) => {
-          handleSelectTopic(e.target.value);
-        }}
-      >
-        <option value="all">Filter by Topic</option>
-        {topics.map((topic) => {
-          return (
-            <option key={topic.slug} value={topic.slug}>
-              {topic.slug}
-            </option>
-          );
-        })}
-      </select>
+    <div className="nav-background">
+      <nav className="container">
+        <button onClick={goToUsers}>Users</button>
+        <select
+          onChange={(e) => {
+            handleSelectTopic(e.target.value);
+          }}
+        >
+          <option value="all">Filter by Topic</option>
+          {topics.map((topic) => {
+            return (
+              <option key={topic.slug} value={topic.slug}>
+                {topic.slug}
+              </option>
+            );
+          })}
+        </select>
+        <select onChange={(e) => setSortBy(e.target.value.toLowerCase())}>
+          <option value="created_at">Sort By</option>
+          {validSorts.map((sort) => {
+            return (
+              <option key={sort} value={sort}>
+                {sort}
+              </option>
+            );
+          })}
+        </select>
 
-      <select onChange={(e) => setSortBy(e.target.value.toLowerCase())}>
-        <option value="date">Sort By</option>
-        {validSorts.map((sort) => {
-          return (
-            <option key={sort} value={sort}>
-              {sort}
-            </option>
-          );
-        })}
-      </select>
-
-      <select onChange={(e) => setOrder(e.target.value)}>
-        <option value="DESC">Sort Order</option>
-        <option value="ASC">Ascending</option>
-        <option value="DESC">Descending</option>
-      </select>
-    </nav>
+        <select onChange={(e) => setOrder(e.target.value)}>
+          <option value="DESC">Sort Order</option>
+          <option value="ASC">Ascending</option>
+          <option value="DESC">Descending</option>
+        </select>
+      </nav>
+    </div>
   );
 };

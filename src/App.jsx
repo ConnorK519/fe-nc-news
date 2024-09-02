@@ -18,19 +18,21 @@ function App() {
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <Header />
         <NavBar setSortBy={setSortBy} setOrder={setOrder} />
-        <Routes>
-          <Route
-            path="/"
-            element={<ArticleList sort_by={sort_by} order={order} />}
-          />
-          <Route
-            path="/articles/topics/:topic"
-            element={<ArticleList sort_by={sort_by} order={order} />}
-          />
-          <Route path="/articles/:key" element={<ArticleCard />} />
+        <div className="container">
+          <Routes>
+            <Route
+              path="/"
+              element={<ArticleList sort_by={sort_by} order={order} />}
+            />
+            <Route
+              path="/articles/topics/:topic"
+              element={<ArticleList sort_by={sort_by} order={order} />}
+            />
+            <Route path="/articles/:key" element={<ArticleCard />} />
 
-          <Route path="/users" element={<UsersPage />} />
-        </Routes>
+            <Route path="/users" element={<UsersPage />} />
+          </Routes>
+        </div>
       </UserContext.Provider>
     </>
   );
