@@ -37,20 +37,24 @@ export const NavBar = ({ setSortBy, setOrder }) => {
             handleSelectTopic(e.target.value);
           }}
         >
-          <option value="all">Filter by Topic</option>
+          <option className="drop-down" value="all">
+            Filter by Topic
+          </option>
           {topics.map((topic) => {
             return (
-              <option key={topic.slug} value={topic.slug}>
+              <option className="drop-down" key={topic.slug} value={topic.slug}>
                 {topic.slug}
               </option>
             );
           })}
         </select>
         <select onChange={(e) => setSortBy(e.target.value.toLowerCase())}>
-          <option value="created_at">Sort By</option>
+          <option className="drop-down" value="created_at">
+            Sort By
+          </option>
           {validSorts.map((sort) => {
             return (
-              <option key={sort} value={sort}>
+              <option className="drop-down" key={sort} value={sort}>
                 {sort}
               </option>
             );
@@ -58,9 +62,15 @@ export const NavBar = ({ setSortBy, setOrder }) => {
         </select>
 
         <select onChange={(e) => setOrder(e.target.value)}>
-          <option value="DESC">Sort Order</option>
-          <option value="ASC">Ascending</option>
-          <option value="DESC">Descending</option>
+          <option className="drop-down" value="DESC">
+            Sort Order
+          </option>
+          <option className="drop-down" value="ASC">
+            Ascending
+          </option>
+          <option className="drop-down" value="DESC">
+            Descending
+          </option>
         </select>
       </nav>
     </div>

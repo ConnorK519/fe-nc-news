@@ -7,6 +7,7 @@ export const ArticleList = ({ sort_by, order }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [articleListLabel, setArticleListLabel] = useState("LATEST");
   const { topic } = useParams();
 
   useEffect(() => {
@@ -18,6 +19,20 @@ export const ArticleList = ({ sort_by, order }) => {
           article.container = "side-article";
         }
       }
+      if (sort_by == "author") {
+        const orderLabel = order == "DESC" ? "Z - A" : "A - Z";
+        setArticleListLabel(`${orderLabel}`);
+      }
+      if (sort_by == "comment_count" || sort_by == "votes") {
+        const orderLabel =
+          order == "DESC" ? "HIGHEST TO LOWEST" : "LOWEST TO HIGHEST";
+        setArticleListLabel(`${orderLabel}`);
+      }
+      if ((sort_by == "created_at" || !sort_by) && order) {
+        const orderLabel = order == "DESC" ? "LATEST" : "OLDEST";
+        setArticleListLabel(`${orderLabel}`);
+      }
+      console.log(sort_by);
       setArticles(articles);
       setLoading(false);
     });
@@ -30,7 +45,7 @@ export const ArticleList = ({ sort_by, order }) => {
   return (
     <>
       <div className="separator">
-        <p className="separator-label">LATEST</p>
+        <p className="separator-label">{articleListLabel}</p>
         <p className="page-label">PAGE {currentPage}</p>
       </div>
       <div className="article-display-grid">

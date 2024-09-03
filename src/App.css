@@ -22,6 +22,7 @@ body {
 
 h1 {
   color: black;
+  font-weight: 700;
 }
 
 .logo {
@@ -79,6 +80,11 @@ nav select:hover,
 nav button:hover {
   color: #444;
   border-bottom: 3px solid black;
+}
+
+.drop-down {
+  background-color: rgba(28, 28, 179, 1);
+  color: white;
 }
 
 /* SECTION LABELS */
@@ -167,11 +173,22 @@ nav button:hover {
   position: relative;
 }
 
+.article-title {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
 .comment-and-vote-counter {
   position: absolute;
   bottom: 5px;
   right: 5px;
   font-size: 10px;
+  color: black;
+}
+
+.link {
+  text-decoration: none;
 }
 
 /* FEATURED ARTICLE */
@@ -198,6 +215,7 @@ nav button:hover {
   bottom: 5px;
   left: 5px;
   font-size: 12px;
+  color: black;
 }
 
 /* SIDE ARTICLE */
@@ -227,6 +245,7 @@ nav button:hover {
   bottom: 5px;
   left: 5px;
   font-size: 8px;
+  color: black;
 }
 
 /* PAGINATION */
@@ -240,4 +259,6 @@ nav button:hover {
 .pageNum {
   display: inline-block;
   margin: 0 20px;
+  cursor: pointer;
+  font-weight: 700;
 }
