@@ -5,7 +5,7 @@ const newsApi = axios.create({
 });
 
 export const getArticleInfo = (sort_by, order, topic, page) => {
-  const params = { sort_by, order, topic, page, limit: 5 };
+  const params = { sort_by, order, topic, page, limit: 10 };
   return newsApi.get("/articles", { params }).then(({ data: { articles } }) => {
     return articles;
   });

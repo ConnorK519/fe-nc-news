@@ -56,7 +56,7 @@ h1 {
     rgba(28, 28, 179, 1) 50%,
     rgba(0, 212, 255, 1) 100%
   );
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   height: 40px;
 }
 
@@ -87,7 +87,7 @@ nav button:hover {
   position: relative;
   border-bottom: 5px solid black;
   letter-spacing: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .separator-label {
@@ -113,9 +113,10 @@ nav button:hover {
 .article-display-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 87px);
+  grid-template-rows: repeat(4, 87px);
   align-items: center;
   gap: 30px;
+  margin-bottom: 50px;
 }
 
 .article-display-card {
@@ -152,24 +153,12 @@ nav button:hover {
   grid-row: 4;
 }
 
-.article-display-card:nth-child(6) {
-  grid-column: 1 / span 3;
-  grid-row: 5;
+.more-articles {
+  margin-bottom: 50px;
 }
 
-.article-display-card:nth-child(7) {
-  grid-column: 4 / span 3;
-  grid-row: 5;
-}
-
-.article-display-card:nth-child(8) {
-  grid-column: 1 / span 3;
-  grid-row: 6;
-}
-
-.article-display-card:nth-child(9) {
-  grid-column: 4 / span 3;
-  grid-row: 6;
+.more-articles .article-display-card {
+  margin-bottom: 30px;
 }
 
 /* ARTICLE BASE STYLES */
@@ -238,4 +227,17 @@ nav button:hover {
   bottom: 5px;
   left: 5px;
   font-size: 8px;
+}
+
+/* PAGINATION */
+
+.pagesBox {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pageNum {
+  display: inline-block;
+  margin: 0 20px;
 }
