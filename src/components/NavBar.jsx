@@ -38,7 +38,7 @@ export const NavBar = ({ setSortBy, setOrder }) => {
           }}
         >
           <option className="drop-down" value="all">
-            Filter by Topic
+            Topic
           </option>
           {topics.map((topic) => {
             return (

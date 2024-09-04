@@ -32,9 +32,9 @@ export const ArticleList = ({ sort_by, order }) => {
         const orderLabel = order == "DESC" ? "LATEST" : "OLDEST";
         setArticleListLabel(`${orderLabel}`);
       }
-      console.log(sort_by);
       setArticles(articles);
       setLoading(false);
+      window.scrollTo(0, 0);
     });
   }, [sort_by, order, topic, currentPage]);
 
