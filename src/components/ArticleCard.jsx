@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
 import { CommentsList } from "./CommentList";
+import { LoadingScreen } from "./LoadingScreen";
 import { patchArticle } from "../api";
 import dayjs from "dayjs";
 import "../App.css";
 
 export const ArticleCard = () => {
   const { key } = useParams();
-
   const [newArticle, setNewArticle] = useState({});
   const [loading, setLoading] = useState(true);
   const [userVote, setUserVote] = useState(0);
@@ -40,7 +40,7 @@ export const ArticleCard = () => {
   };
 
   if (loading) {
-    return <>Loading...</>;
+    return <LoadingScreen />;
   }
 
   const written = dayjs(newArticle.created_at).format("dddd, MMMM D, YYYY");

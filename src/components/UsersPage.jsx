@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 import { getUsers } from "../api";
 import "../App.css";
-import { useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
 import { UserCard } from "./UserCard";
+import { LoadingScreen } from "./LoadingScreen";
 
 export const UsersPage = () => {
   const [users, setUsers] = useState([]);
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getUsers().then(({ users }) => {
       setUsers(users);
+      setLoading(false);
     });
   }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <>
