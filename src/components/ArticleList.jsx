@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ArticleInfo } from "./ArticleInfo";
 import { getArticleInfo } from "../api";
 import { useParams } from "react-router-dom";
+import { LoadingScreen } from "./LoadingScreen";
 
 export const ArticleList = ({ sort_by, order }) => {
   const [articles, setArticles] = useState([]);
@@ -39,51 +40,53 @@ export const ArticleList = ({ sort_by, order }) => {
   }, [sort_by, order, topic, currentPage]);
 
   if (loading) {
-    return <>Loading...</>;
+    return <LoadingScreen />;
   }
 
   return (
     <>
-      <div className="separator">
-        <p className="separator-label">{articleListLabel}</p>
-        <p className="page-label">PAGE {currentPage}</p>
-      </div>
-      <div className="article-display-grid">
-        {articles.map((article) => {
-          if (articles.indexOf(article) < 5)
-            return <ArticleInfo key={article.article_id} article={article} />;
-        })}
-      </div>
-      <div className="separator">
-        <p className="separator-label">MORE ARTICLES</p>
-      </div>
-      <div className="more-articles">
-        {articles.map((article) => {
-          if (articles.indexOf(article) > 4)
-            return <ArticleInfo key={article.article_id} article={article} />;
-        })}
-      </div>
-      <div className="separator">
-        <p className="separator-label">PAGES</p>
-      </div>
-      <div className="pagesBox">
-        {Array.from(
-          { length: articles[0].total_pages },
-          (_, index) => index + 1
-        ).map((num) => {
-          return (
-            <a
-              key={num}
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage(num);
-              }}
-              className="pageNum"
-            >
-              {num}
-            </a>
-          );
-        })}
+      <div className="container">
+        <div className="separator">
+          <p className="separator-label">{articleListLabel}</p>
+          <p className="page-label">PAGE {currentPage}</p>
+        </div>
+        <div className="article-display-grid">
+          {articles.map((article) => {
+            if (articles.indexOf(article) < 5)
+              return <ArticleInfo key={article.article_id} article={article} />;
+          })}
+        </div>
+        <div className="separator">
+          <p className="separator-label">MORE ARTICLES</p>
+        </div>
+        <div className="more-articles">
+          {articles.map((article) => {
+            if (articles.indexOf(article) > 4)
+              return <ArticleInfo key={article.article_id} article={article} />;
+          })}
+        </div>
+        <div className="separator">
+          <p className="separator-label">PAGES</p>
+        </div>
+        <div className="pagesBox">
+          {Array.from(
+            { length: articles[0].total_pages },
+            (_, index) => index + 1
+          ).map((num) => {
+            return (
+              <a
+                key={num}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage(num);
+                }}
+                className="pageNum"
+              >
+                {num}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </>
   );

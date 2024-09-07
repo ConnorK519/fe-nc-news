@@ -1,7 +1,6 @@
 import "../App.css";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
-import { ArticleList } from "./ArticleList";
 
 export const ArticleInfo = ({ article }) => {
   const written = dayjs(article.created_at).format("dddd, MMMM D, YYYY");
