@@ -10,6 +10,7 @@ export const CommentCard = ({ comment }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [commentMsg, setCommentMsg] = useState("");
   const [isError, setIsError] = useState(false);
+  const [originalVotes, setOriginalVotes] = useState(comment.votes);
 
   const handleDelete = (event) => {
     setIsVisible(false);
@@ -28,25 +29,42 @@ export const CommentCard = ({ comment }) => {
 
   return (
     <>
-      <section className="info border">
-        <div className="commentCard">
-          {isError && <h2>{commentMsg}</h2>}
-          {!isVisible && <h2>{commentMsg}</h2>}
-          {isVisible ? (
-            <>
-              <h2>{comment.author}</h2>
-              <p className="dateMade">{written}</p>
-              <p className="textSpacing">{comment.body}</p>
-              <p className="votes">Vote: {comment.votes}</p>
-              {currentUser === comment.author && (
-                <button onClick={handleDelete} className="deleteButton">
-                  Delete Comment
-                </button>
-              )}
-            </>
-          ) : null}
-        </div>
-      </section>
+      <div className="comment-card">
+        {isError && <p>{commentMsg}</p>}
+        {!isVisible && <p>{commentMsg}</p>}
+        {isVisible ? (
+          <>
+            <div className="comment-header">
+              <p className="comment-author">{comment.author}</p>
+              <p className="">{written}</p>
+            </div>
+            <p className="comment-body">{comment.body}</p>
+            <div className="votes-box">
+              {/* {voteError && <p>{voteError}</p>} */}
+              <button
+                // onClick={() => handleClick(1)}
+                disabled={true}
+                // className={userVote > 0 ? voteConfirm : ""}
+              >
+                👍
+              </button>
+              <p className="votes">{originalVotes}</p>
+              <button
+                // onClick={() => handleClick(-1)}
+                disabled={true}
+                // className={userVote < 0 ? voteConfirm : ""}
+              >
+                👎
+              </button>
+            </div>
+            {currentUser === comment.author && (
+              <button onClick={handleDelete} className="deleteButton">
+                Delete Comment
+              </button>
+            )}
+          </>
+        ) : null}
+      </div>
     </>
   );
 };
