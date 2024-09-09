@@ -10,7 +10,7 @@ export const ArticleInfo = ({ article }) => {
         <article className={article.container}>
           <img src={article.article_img_url} alt={article.topic} />
           <div className="article-content">
-            <p className="article-title">{article.title}</p>
+            <h2 className="article-info-title">{article.title}</h2>
             <p className="author-and-posted-at">
               Posted by <strong>{article.author}</strong> on {written}
             </p>

@@ -13,12 +13,15 @@ export const CommentsList = ({ keyId }) => {
   }, [keyId]);
 
   if (comments.length === 0) {
-    return <h2>There are no Comments</h2>;
+    return <p>There are no Comments</p>;
   }
 
   return (
     <>
-      <section className="container">
+      <section>
+        <div className="separator">
+          <p className="separator-label">COMMENTS</p>
+        </div>
         <CreateComment keyId={keyId} setComments={setComments} />
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment} />;

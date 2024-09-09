@@ -48,6 +48,42 @@ export const ArticleCard = () => {
   return (
     <>
       <div className="container">
+        <div className="separator">
+          <p className="separator-label">{newArticle.topic.toUpperCase()}</p>
+        </div>
+        <article className="article-page">
+          <h1>{newArticle.title}</h1>
+          <p className="author-and-posted-at">
+            Posted by <strong>{newArticle.author}</strong> on {written}
+          </p>
+          <img
+            alt={newArticle.topic}
+            className="article-image"
+            src={newArticle.article_img_url}
+          />
+          <p className="article-body">{newArticle.body}</p>
+          <div className="votes-box">
+            {voteError && <p>{voteError}</p>}
+            <button
+              onClick={() => handleClick(1)}
+              disabled={userVote > 0}
+              className={userVote > 0 ? voteConfirm : ""}
+            >
+              👍
+            </button>
+            <p className="votes">{originalVotes + userVote}</p>
+            <button
+              onClick={() => handleClick(-1)}
+              disabled={userVote < 0}
+              className={userVote < 0 ? voteConfirm : ""}
+            >
+              👎
+            </button>
+          </div>
+        </article>
+        <CommentsList keyId={key} />
+      </div>
+      {/* <div className="container">
         <section className="articleCard border">
           <h2 className="cardTitle">{newArticle.title}</h2>
           <p className="author">Author: {newArticle.author}</p>
@@ -80,7 +116,7 @@ export const ArticleCard = () => {
         <section>
           <CommentsList keyId={key} />
         </section>
-      </div>
+      </div> */}
     </>
   );
 };
