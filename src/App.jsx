@@ -7,6 +7,7 @@ import { UsersPage } from "./components/UsersPage";
 import { NavBar } from "./components/NavBar";
 import { UserContext } from "./contexts/UserContext";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -31,6 +32,7 @@ function App() {
 
           <Route path="/users" element={<UsersPage />} />
         </Routes>
+        {/* <Footer /> */}
       </UserContext.Provider>
     </>
   );
