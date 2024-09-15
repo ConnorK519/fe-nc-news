@@ -56,10 +56,10 @@ export const ArticleList = ({ sort_by, order }) => {
               return <ArticleInfo key={article.article_id} article={article} />;
           })}
         </div>
-        {/* <div className="separator">
+        <div className="separator">
           <p className="separator-label">MORE ARTICLES</p>
-        </div> */}
-        {/* <div className="more-articles">
+        </div>
+        <div className="more-articles">
           {articles.map((article) => {
             if (articles.indexOf(article) > 4)
               return <ArticleInfo key={article.article_id} article={article} />;
@@ -67,8 +67,8 @@ export const ArticleList = ({ sort_by, order }) => {
         </div>
         <div className="separator">
           <p className="separator-label">PAGES</p>
-        </div> */}
-        {/* <div className="pages-box">
+        </div>
+        <div className="pages-box">
           {Array.from(
             { length: articles[0].total_pages },
             (_, index) => index + 1
@@ -86,7 +86,7 @@ export const ArticleList = ({ sort_by, order }) => {
               </a>
             );
           })}
-        </div> */}
+        </div>
       </div>
     </>
   );
