@@ -518,6 +518,10 @@ section .separator {
     height: 30px;
   }
 
+  .nav-background .container {
+    width: 100%;
+  }
+
   nav select,
   nav button {
     width: 25%;
