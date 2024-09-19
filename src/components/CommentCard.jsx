@@ -36,7 +36,7 @@ export const CommentCard = ({ comment }) => {
           <>
             <div className="comment-header">
               <p className="comment-author">{comment.author}</p>
-              <p className="">{written}</p>
+              <p className="comment-date">{written}</p>
             </div>
             <p className="comment-body">{comment.body}</p>
             <div className="votes-box">
