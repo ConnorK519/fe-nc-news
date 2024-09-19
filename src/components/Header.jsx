@@ -7,8 +7,8 @@ import logo from "../images/Logo.png";
 export const Header = () => {
   const { currentUser } = useContext(UserContext);
   return (
-    <div className="page-header">
-      <header className="container">
+    <header className="page-header">
+      <dic className="container">
         <Link className="logo-and-title link" to="/">
           <img
             className="logo"
@@ -18,7 +18,7 @@ export const Header = () => {
           <p className="site-name">NC-News</p>
         </Link>
         {currentUser && <p>Logged in as: {currentUser}</p>}
-      </header>
-    </div>
+      </dic>
+    </header>
   );
 };

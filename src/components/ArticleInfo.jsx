@@ -12,7 +12,7 @@ export const ArticleInfo = ({ article }) => {
           <div className="article-content">
             <h2 className="article-info-title">{article.title}</h2>
             <p className="author-and-posted-at">
-              Posted by <strong>{article.author}</strong> on {written}
+              <strong>{article.author}</strong> - {written}
             </p>
             <p className="comment-and-vote-counter">
               🗪: {article.comment_count} 👍: {article.votes}

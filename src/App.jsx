@@ -32,7 +32,7 @@ function App() {
 
           <Route path="/users" element={<UsersPage />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </UserContext.Provider>
     </>
   );
