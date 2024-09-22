@@ -746,3 +746,9 @@ section .separator {
     }
   }
 }
+
+@media screen and (min-width: 801px) and (max-device-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
