@@ -17,7 +17,9 @@ export const Header = () => {
           />
           <p className="site-name">NC-News</p>
         </Link>
-        {currentUser && <p>Logged in as: {currentUser}</p>}
+        {currentUser && (
+          <p className="logged-in-user">Logged in as: {currentUser}</p>
+        )}
       </dic>
     </header>
   );
