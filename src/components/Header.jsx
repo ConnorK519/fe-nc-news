@@ -8,7 +8,7 @@ export const Header = () => {
   const { currentUser } = useContext(UserContext);
   return (
     <header className="page-header">
-      <dic className="container">
+      <div className="container">
         <Link className="logo-and-title link" to="/">
           <img
             className="logo"
@@ -20,7 +20,7 @@ export const Header = () => {
         {currentUser && (
           <p className="logged-in-user">Logged in as: {currentUser}</p>
         )}
-      </dic>
+      </div>
     </header>
   );
 };

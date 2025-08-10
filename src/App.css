@@ -8,7 +8,7 @@
 
 body {
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 0.938rem;
   background-color: rgb(231, 229, 229);
 }
 
@@ -113,6 +113,7 @@ body {
 
 .logged-in-user {
   margin-right: 10px;
+  font-size: 0.5rem;
 }
 
 .logo {
@@ -273,7 +274,7 @@ nav button:hover {
 
 .article-info-title {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
   color: black;
 }
@@ -282,7 +283,7 @@ nav button:hover {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  font-size: 10px;
+  font-size: 0.625rem;
   color: black;
 }
 
@@ -309,7 +310,7 @@ nav button:hover {
   position: absolute;
   bottom: 5px;
   left: 5px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: black;
 }
 
@@ -339,7 +340,7 @@ nav button:hover {
   position: absolute;
   bottom: 5px;
   left: 5px;
-  font-size: 8px;
+  font-size: 0.5rem;
   color: black;
 }
 
@@ -374,7 +375,7 @@ nav button:hover {
 }
 
 .article-page .author-and-posted-at {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-bottom: 40px;
 }
 
@@ -429,7 +430,7 @@ section .separator {
 }
 
 .comment-card .comment-author {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -441,7 +442,7 @@ section .separator {
 }
 
 .comment-date {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .comment-input-box {
@@ -483,7 +484,6 @@ section .separator {
   }
 
   .logged-in-user {
-    font-size: 0.5rem;
     margin-right: 10px;
   }
 
